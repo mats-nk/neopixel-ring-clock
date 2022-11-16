@@ -3,13 +3,13 @@
 #include <WiFiUdp.h>
 #include <Adafruit_NeoPixel.h>
 
-#define NEO_PIN 4 //D2
-#define NUM_PIXELS 24 // Number of pixels in the ring
+#define NEO_PIN 4                      // Pin D2
+#define NUM_PIXELS 24                  // Number of pixels in the ring
 
-const char *ssid     = "***"; // Wifi name
-const char *password = "***"; // Wifi password
+const char *ssid     = "***";          // Wifi name
+const char *password = "***";          // Wifi password
 
-const long utcOffsetInSeconds = 3600; // UTC Offset of timezone -- 3600 for CET
+const long utcOffsetInSeconds = 3600;  // UTC Offset of timezone -- 3600 for CET
 
 Adafruit_NeoPixel pixels(NUM_PIXELS, NEO_PIN, NEO_GRB + NEO_KHZ800); // Initialise NeoPixel Library
 
@@ -68,9 +68,8 @@ void loop() {
     if (i + 1 == hour_pixel) {
       pixels.setPixelColor(i, pixels.Color(150, 0, 0));
     }
-    
   }
-  
+
   pixels.show();
   delay(1000);
 }
